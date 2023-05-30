@@ -1,0 +1,56 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = '1.8.20'
+    ext {
+        //Global variables
+        compile_sdk_version = 33
+        min_sdk_version = 21
+
+        //Local Variables
+        def core_version = '1.8.0'
+        def appcompat_version = '1.4.1'
+        def material_version = '1.5.0'
+        def constraintlayout_version = '2.1.3'
+        def junit_version = '4.13.2'
+        def extJunit_version = '1.1.5'
+        def espresso_version = '3.5.1'
+        def nav_version = "2.5.3"
+        libraries = [
+                // Android UI and appcompat
+                "androidx.core:core-ktx:$core_version",
+                "androidx.appcompat:appcompat:$appcompat_version",
+                "com.google.android.material:material:$material_version",
+                "androidx.constraintlayout:constraintlayout:$constraintlayout_version",
+
+        ]
+        testLibraries = [
+                "junit:junit:$junit_version"
+
+        ]
+
+        androidTestLibraries = [
+                "androidx.test.ext:junit:$extJunit_version",
+                "androidx.test.espresso:espresso-core:$espresso_version",
+                // Testing Navigation
+                "androidx.navigation:navigation-testing:$nav_version"
+
+        ]
+
+        navigationLibraries = [
+                // Kotlin
+                "androidx.navigation:navigation-fragment-ktx:$nav_version",
+                "androidx.navigation:navigation-ui-ktx:$nav_version",
+
+                // Feature module Support
+                "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+        ]
+
+
+    }
+}
+plugins {
+    id 'com.android.application' version '8.0.1' apply false
+    id 'com.android.library' version '8.0.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.20' apply false
+}

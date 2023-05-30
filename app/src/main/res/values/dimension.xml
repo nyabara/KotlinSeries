@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="min_text_height">48dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="error_text_size">24sp</dimen>
+    <dimen name="delivman_name_size">24sp</dimen>
+
+
+    <!-- Padding on the bottom of a screen so that the FAB won't overlap scrolled text. -->
+    <dimen name="fab_bottom_padding">72dp</dimen>
+
+    <dimen name="house_detail_app_bar_height">278dp</dimen>
+
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_extra_small">4dp</dimen>
+
+    <dimen name="house_item_image_height">95dp</dimen>
+
+    <dimen name="card_side_margin">12dp</dimen>
+    <dimen name="card_bottom_margin">26dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_corner_radius">12dp</dimen>
+
+    <!-- elevation for KotlinSeries Detail toolbar - used to convert to pixels when hiding/showing -->
+    <dimen name="toolbar_elevation">5dp</dimen>
+
+    <!-- KotlinSeries List Header margin -->
+    <dimen name="header_margin">24dp</dimen>
+
+
+    <dimen name="margin_xsmall">16dp</dimen>
+    <dimen name="margin_medium">48dp</dimen>
+    <dimen name="margin_large">64dp</dimen>
+    <dimen name="margin_xlarge">92dp</dimen>
+
+    <dimen name="spacing_small">4dp</dimen>
+    <dimen name="spacing_medium">8dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
+
+    <dimen name="stroke_small">4dp</dimen>
+    <dimen name="stroke_medium">8dp</dimen>
+    <dimen name="stroke_large">12dp</dimen>
+
+    <dimen name="round_button_small">32dp</dimen>
+    <dimen name="round_button_medium">64dp</dimen>
+    <dimen name="round_button_large">92dp</dimen>
+
+    <dimen name="rect_button_margin">12dp</dimen>
+    <dimen name="rect_button_width">80dp</dimen>
+    <dimen name="rect_button_height">24dp</dimen>
+    <dimen name="shutter_button_margin">80dp</dimen>
+</resources>
