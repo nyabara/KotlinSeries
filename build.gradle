@@ -15,6 +15,7 @@ buildscript {
         def extJunit_version = '1.1.5'
         def espresso_version = '3.5.1'
         def nav_version = "2.5.3"
+        def drawer_version = "1.2.0"
         libraries = [
                 // Android UI and appcompat
                 "androidx.core:core-ktx:$core_version",
@@ -44,6 +45,9 @@ buildscript {
                 // Feature module Support
                 "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
 
+        ]
+        drawerLibraries = [
+                "androidx.drawerlayout:drawerlayout:$drawer_version"
         ]
 
 

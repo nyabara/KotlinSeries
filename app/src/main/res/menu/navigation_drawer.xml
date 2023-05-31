@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/my_file"
+            android:icon="@drawable/baseline_folder_24"
+            android:title="@string/myfile"
+            android:checked="true" />
+        <item
+            android:id="@+id/business"
+            android:icon="@drawable/baseline_business_24"
+            android:title="@string/business" />
+        <item
+            android:id="@+id/account"
+            android:icon="@drawable/baseline_supervisor_account_24"
+            android:title="@string/account" />
+        <item
+            android:id="@+id/trash"
+            android:icon="@drawable/baseline_folder_delete_24"
+            android:title="@string/trash" />
+    </group>
+
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/communicate"
+            android:title="Communication">
+            <menu>
+                <item
+                    android:id="@+id/email"
+                    android:icon="@drawable/baseline_email_24"
+                    android:title="@string/email" />
+
+                <item
+                    android:id="@+id/share"
+                    android:icon="@drawable/baseline_share_24"
+                    android:title="@string/share" />
+
+            </menu>
+        </item>
+    </group>
+
+</menu>

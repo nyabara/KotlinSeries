@@ -80,7 +80,7 @@ class LoginFragment : Fragment() {
                 val emailInMap = user.get("email")
                 if (password == passwordInMap && emailInMap == email){
                     result = "Success"
-                    Toast.makeText(requireContext(),"Success",Toast.LENGTH_SHORT)
+                    //Toast.makeText(requireContext(),"Success",Toast.LENGTH_SHORT)
                 }else{
                     result = "Does not exist"
                 }

@@ -8,4 +8,12 @@
     <string name="Become_a_member">Become a member? Click here.</string>
     <string name="kotlinseries">KotlinSeries</string>
     <string name="password">Password</string>
+    <string name="myfile">My Files</string>
+    <string name="business">Business</string>
+    <string name="account">Account</string>
+    <string name="trash">Trash</string>
+    <string name="share">Share</string>
+    <string name="email">Email</string>
+    <string name="header_title">Gilbert Ayoma</string>
+    <string name="header_text">nyabarayoma1@gmail.com</string>
 </resources>
