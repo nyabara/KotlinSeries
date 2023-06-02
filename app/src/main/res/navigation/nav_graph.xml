@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.kotlinseries.ui.LoginFragment"
-        android:label="@string/kotlinseries"
+        android:label="@string/login"
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
@@ -17,6 +17,51 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.kotlinseries.ui.HomeFragment"
-        android:label="fragment_home"
+        android:label="@string/home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.kotlinseries.ui.RegistrationFragment"
+        android:label="@string/register"
+        tools:layout="@layout/fragment_registration" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.kotlinseries.ui.AboutFragment"
+        android:label="@string/about_us"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.kotlinseries.ui.AccountFragment"
+        android:label="@string/account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/businessFragment"
+        android:name="com.example.kotlinseries.ui.BusinessFragment"
+        android:label="@string/business"
+        tools:layout="@layout/fragment_business" />
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.example.kotlinseries.ui.EmailFragment"
+        android:label="@string/email"
+        tools:layout="@layout/fragment_email" />
+    <fragment
+        android:id="@+id/filesFragment"
+        android:name="com.example.kotlinseries.ui.FilesFragment"
+        android:label="@string/myfile"
+        tools:layout="@layout/fragment_files" />
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.kotlinseries.ui.NewsFragment"
+        android:label="@string/news"
+        tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.kotlinseries.ui.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/shareFragment"
+        android:name="com.example.kotlinseries.ui.ShareFragment"
+        android:label="@string/share"
+        tools:layout="@layout/fragment_share" />
 </navigation>

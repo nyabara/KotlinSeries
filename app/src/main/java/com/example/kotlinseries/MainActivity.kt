@@ -12,6 +12,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.kotlinseries.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -24,15 +25,18 @@ class MainActivity : AppCompatActivity() {
 
         val drawerLayout =binding.drawerLayout
         val navView = binding.navView
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         setSupportActionBar(binding.toolbar)
         navController = findNavController(R.id.nav_host_fragment)
         appBarConfiguration = AppBarConfiguration
-            .Builder(R.id.homeFragment, R.id.loginFragment)
+            .Builder(R.id.homeFragment, R.id.loginFragment,R.id.newsFragment,R.id.settingsFragment,R.id.aboutFragment)
             .setDrawerLayout(drawerLayout)
             .build()
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        bottomNav.setupWithNavController(navController)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

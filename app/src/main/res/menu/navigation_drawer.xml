@@ -4,22 +4,23 @@
         android:id="@+id/group1"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/my_file"
+            android:id="@+id/homeFragment"
+            android:icon="@drawable/baseline_home_24"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/filesFragment"
             android:icon="@drawable/baseline_folder_24"
             android:title="@string/myfile"
             android:checked="true" />
         <item
-            android:id="@+id/business"
+            android:id="@+id/businessFragment"
             android:icon="@drawable/baseline_business_24"
             android:title="@string/business" />
         <item
-            android:id="@+id/account"
+            android:id="@+id/accountFragment"
             android:icon="@drawable/baseline_supervisor_account_24"
             android:title="@string/account" />
-        <item
-            android:id="@+id/trash"
-            android:icon="@drawable/baseline_folder_delete_24"
-            android:title="@string/trash" />
+
     </group>
 
     <group
@@ -30,12 +31,12 @@
             android:title="Communication">
             <menu>
                 <item
-                    android:id="@+id/email"
+                    android:id="@+id/emailFragment"
                     android:icon="@drawable/baseline_email_24"
                     android:title="@string/email" />
 
                 <item
-                    android:id="@+id/share"
+                    android:id="@+id/shareFragment"
                     android:icon="@drawable/baseline_share_24"
                     android:title="@string/share" />
 

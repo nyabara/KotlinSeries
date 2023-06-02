@@ -70,43 +70,52 @@ class LoginFragment : Fragment() {
         return false
     }
 
-    fun goToNextScreen(){
-        val myMap = mutableListOf<Map<String,String>>(mutableMapOf("password" to "123","email" to "ayomagilbert@gmail.com")
-            ,mutableMapOf("password" to "123","email" to "ayomagilbert@gmail.com"))
-        val validUser:(String,String) -> String ={email, password ->
-            var result =""
-            for(user in myMap){
+    fun goToNextScreen() {
+        val myMap = mutableListOf<Map<String, String>>(
+            mutableMapOf("password" to "123", "email" to "ayomagilbert@gmail.com"),
+            mutableMapOf("password" to "123", "email" to "ayomagilbert@gmail.com")
+        )
+        val validUser: (String, String) -> String = { email, password ->
+            var result = ""
+            for (user in myMap) {
                 val passwordInMap = user.get("password")
                 val emailInMap = user.get("email")
-                if (password == passwordInMap && emailInMap == email){
+                if (password == passwordInMap && emailInMap == email) {
                     result = "Success"
                     //Toast.makeText(requireContext(),"Success",Toast.LENGTH_SHORT)
-                }else{
+                } else {
                     result = "Does not exist"
                 }
             }
 
-               result
+            result
         }
 
-        val finalResult = isValidUser(textEmail.text.toString(),textPassword.text.toString(),validUser)
+        val finalResult =
+            isValidUser(textEmail.text.toString(), textPassword.text.toString(), validUser)
 
-        Log.d("finalResult",finalResult)
-        if (finalResult == "Success"){
+        Log.d("finalResult", finalResult)
+        if (finalResult == "Success") {
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-        }else{
-            Toast.makeText(requireActivity(),finalResult,Toast.LENGTH_SHORT)
-            return
+            textEmail.text.clear()
+            textPassword.text.clear()
+        } else {
+            Toast.makeText(requireActivity(), finalResult, Toast.LENGTH_SHORT).show()
+
 
         }
 
     }
 
-    fun goToRegistrationScreen(){
+    fun goToRegistrationScreen() {
 
     }
 
-    fun isValidUser(email:String,password:String,validUser:(String,String)->String):String{
-        return validUser(email,password)
+    fun isValidUser(
+        email: String,
+        password: String,
+        validUser: (String, String) -> String
+    ): String {
+        return validUser(email, password)
     }
 }
