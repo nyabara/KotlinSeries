@@ -15,7 +15,6 @@ import java.time.LocalDate
 import java.time.Period
 import java.time.format.DateTimeFormatter
 import java.util.Calendar
-import kotlin.math.absoluteValue
 
 
 class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {
@@ -39,7 +38,8 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
-        val day = c.get(Calendar.DAY_OF_MONTH)+1
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
 
         // Create a new instance of DatePickerDialog and return it
         val dialogFragment = DatePickerDialog(requireContext(), this, year, month, day)
@@ -50,8 +50,10 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        //Adding one to every month since the calender.MONTH starts from 0
+        val dayMonth = month+1
 
-        val date = dayOfMonth.toString() + "-" + month.toString() + "-" + year.toString()
+        val date = dayOfMonth.toString() + "-" + dayMonth.toString() + "-" + year.toString()
         returnedAge = calculateAgeFromDate(date)
 
         //viewModel.getInputToCalculateAge(dayOfMonth,month,year)
@@ -73,7 +75,7 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
 
         //Calculating months remaining until next Birth date
         val nextBirthDate = from.withYear(currenDate.year)
-        val remainingDays = when {
+        val remainingMonths = when {
             nextBirthDate.isBefore(currenDate) -> Period.between(
                 currenDate,
                 nextBirthDate.plusYears(1)
@@ -81,6 +83,15 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
 
             else -> Period.between(currenDate, nextBirthDate).toTotalMonths()
         }
+        val remainingDays = when {
+            nextBirthDate.isBefore(currenDate) -> Period.between(
+                currenDate,
+                nextBirthDate.plusYears(1)
+            ).days
+
+            else -> Period.between(currenDate, nextBirthDate).days
+        }
+
         val months = period.months
         val days = period.days
 
@@ -88,7 +99,7 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
         Log.d("months",months.toString())
 
         val result =
-            "You current age is ${years.toString()} and months remaining until your next birth date is ${remainingDays.toString()}"
+            "You current age is ${years.toString()}, months remaining until your next birthdate is ${remainingMonths.toString()} and ${remainingDays.toString()} days"
 
         return result
     }
