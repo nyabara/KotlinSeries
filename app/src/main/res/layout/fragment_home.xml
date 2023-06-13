@@ -7,15 +7,12 @@
     tools:context=".ui.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/home"
-        android:textAlignment="center"
-        style="@style/TextAppearance.Material3.BodyLarge"
-        app:layout_constraintBottom_toBottomOf="parent"/>
 
+
+    <WebView
+        android:id="@+id/fWebView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

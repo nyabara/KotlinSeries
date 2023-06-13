@@ -36,6 +36,7 @@ class LoginFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+
         val view = binding.root
         return view
     }
@@ -73,7 +74,7 @@ class LoginFragment : Fragment() {
     fun goToNextScreen() {
         val myMap = mutableListOf<Map<String, String>>(
             mutableMapOf("password" to "123", "email" to "ayomagilbert@gmail.com"),
-            mutableMapOf("password" to "123", "email" to "ayomagilbert@gmail.com")
+            mutableMapOf("password" to "231", "email" to "joyrose@gmail.com")
         )
         val validUser: (String, String) -> String = { email, password ->
             var result = ""
@@ -108,7 +109,7 @@ class LoginFragment : Fragment() {
     }
 
     fun goToRegistrationScreen() {
-
+        findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
     }
 
     fun isValidUser(

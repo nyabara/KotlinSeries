@@ -16,6 +16,7 @@ buildscript {
         def espresso_version = '3.5.1'
         def nav_version = "2.5.3"
         def drawer_version = "1.2.0"
+        def room_version = "2.5.1"
         libraries = [
                 // Android UI and appcompat
                 "androidx.core:core-ktx:$core_version",
@@ -25,7 +26,8 @@ buildscript {
 
         ]
         testLibraries = [
-                "junit:junit:$junit_version"
+                "junit:junit:$junit_version",
+                "androidx.room:room-testing:$room_version"
 
         ]
 
@@ -48,6 +50,19 @@ buildscript {
         ]
         drawerLibraries = [
                 "androidx.drawerlayout:drawerlayout:$drawer_version"
+        ]
+
+        arch_libraries = [
+
+                // Room for database
+                "androidx.room:room-ktx:$room_version",
+                "androidx.room:room-paging:$room_version",
+                "androidx.room:room-runtime:$room_version",
+                "androidx.room:room-rxjava2:$room_version",
+                "androidx.room:room-rxjava3:$room_version"
+        ]
+        librariesKapt = [
+                "androidx.room:room-compiler:$room_version"
         ]
 
 
