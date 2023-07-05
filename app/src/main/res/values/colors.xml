@@ -6,6 +6,29 @@
     <color name="kotlin_series_pink_100">#FFBB86FC</color>
     <color name="kotlin_series_pink_900">#FFFFFFFF</color>
 
-    <color name="green_700">#195717</color>
+    <color name="green_700">#005d2b</color>
     <color name="green_500">#49bb79</color>
+    <color name="splash_screen_background">#A8EFC6</color>
+
+
+
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="fastlane_background">#1B5E20</color>
+    <color name="icon_background">#4A4F51</color>
+    <color name="icon_alt_background">#2A2F51</color>
+
+    <color name="background_grey">#ffDDDDDD</color>
+    <color name="text_light">#ff666666</color>
+    <color name="text_black">#ff222222</color>
+    <color name="light_blue_400">#FF29B6F6</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
+
+    <color name="icActive">#FFFFFFFF</color>
+    <color name="icFocused">#DDFFFFFF</color>
+    <color name="icPressed">#AAFFFFFF</color>
 </resources>

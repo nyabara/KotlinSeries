@@ -99,7 +99,7 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
         Log.d("months",months.toString())
 
         val result =
-            "You current age is ${years.toString()}, months remaining until your next birthdate is ${remainingMonths.toString()} and ${remainingDays.toString()} days"
+            "You current age is: ${years.toString()}, ${remainingMonths.toString()} months remaining and ${remainingDays.toString()} days until your next birthdate"
 
         return result
     }
