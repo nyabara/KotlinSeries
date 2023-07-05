@@ -112,19 +112,20 @@ class CameraFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.R){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             windowMetrics = windowManager.currentWindowMetrics
-            screenAspectRatio = aspectRatio(windowMetrics.bounds.width(),windowMetrics.bounds.height())
-            Log.d(TAG,"screen ratio: $screenAspectRatio")
-        }else{
+            screenAspectRatio =
+                aspectRatio(windowMetrics.bounds.width(), windowMetrics.bounds.height())
+            Log.d(TAG, "screen ratio: $screenAspectRatio")
+        } else {
             val displayMetrics = DisplayMetrics()
             //windowMetrics =
             windowManager.defaultDisplay.getMetrics(displayMetrics)
             val width = displayMetrics.widthPixels
             val height = displayMetrics.heightPixels
 
-            screenAspectRatio = aspectRatio(width,height)
-            Log.d(TAG,"screen ratio: $screenAspectRatio")
+            screenAspectRatio = aspectRatio(width, height)
+            Log.d(TAG, "screen ratio: $screenAspectRatio")
 
         }
     }
@@ -216,7 +217,7 @@ class CameraFragment : Fragment() {
 
         // Build UI controls
 
-        if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.R){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             fragmentCameraBinding.viewFinder.post {
 
                 // Keep track of the display in which this view is attached
@@ -271,7 +272,7 @@ class CameraFragment : Fragment() {
         updateCameraSwitchButton()
 
         // Build and bind the camera use cases
-        if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.R){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             bindCameraUseCases()
         }
 
@@ -284,7 +285,7 @@ class CameraFragment : Fragment() {
         // Get screen metrics used to setup camera for full screen resolution
         val metrics = windowManager.currentWindowMetrics.bounds
         //val metrics = WindowMetricsCalculator.getOrCreate().computeCurrentWindowMetrics(requireActivity()).bounds
-       Log.d(TAG, "Screen metrics: ${metrics.width()} x ${metrics.height()}")
+        Log.d(TAG, "Screen metrics: ${metrics.width()} x ${metrics.height()}")
 
         val screenAspectRatio = aspectRatio(metrics.width(), metrics.height())
         Log.d(TAG, "Preview aspect ratio: $screenAspectRatio")
@@ -292,7 +293,8 @@ class CameraFragment : Fragment() {
         val rotation = fragmentCameraBinding.viewFinder.display.rotation
 
         // CameraProvider
-        val cameraProvider = cameraProvider ?: throw IllegalStateException("Camera initialization failed.")
+        val cameraProvider =
+            cameraProvider ?: throw IllegalStateException("Camera initialization failed.")
 
         // CameraSelector
         val cameraSelector = CameraSelector.Builder().requireLensFacing(lensFacing).build()
@@ -346,7 +348,7 @@ class CameraFragment : Fragment() {
             // A variable number of use-cases can be passed here -
             // camera provides access to CameraControl & CameraInfo
             camera = cameraProvider.bindToLifecycle(
-                this , cameraSelector, preview, imageCapture, imageAnalyzer
+                this, cameraSelector, preview, imageCapture, imageAnalyzer
             )
 
             // Attach the viewfinder's surface provider to preview use case
