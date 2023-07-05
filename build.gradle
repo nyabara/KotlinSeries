@@ -3,7 +3,7 @@ buildscript {
     ext.kotlin_version = '1.8.20'
     ext {
         //Global variables
-        compile_sdk_version = 33
+        compile_sdk_version = 34
         min_sdk_version = 21
 
         //Local Variables
@@ -17,12 +17,43 @@ buildscript {
         def nav_version = "2.5.3"
         def drawer_version = "1.2.0"
         def room_version = "2.5.1"
+        def splash_screen = "1.0.0"
+        def pagingVersion = '3.1.0'
+        def camerax_version = '1.3.0-beta01'
+        def window_manager_version ='1.2.0-alpha03'
+        def glide_version = '4.12.0'
+        def work_version = '2.7.0'
+        def location_version = '20.0.0'
+
         libraries = [
                 // Android UI and appcompat
                 "androidx.core:core-ktx:$core_version",
                 "androidx.appcompat:appcompat:$appcompat_version",
                 "com.google.android.material:material:$material_version",
                 "androidx.constraintlayout:constraintlayout:$constraintlayout_version",
+                "androidx.core:core-splashscreen:$splash_screen",
+
+
+                //paging
+                "androidx.paging:paging-runtime-ktx:$pagingVersion",
+
+                // CameraX core library
+                "androidx.camera:camera-core:$camerax_version",
+                // CameraX Camera2 extensions
+                "androidx.camera:camera-camera2:$camerax_version",
+                // CameraX Lifecycle library
+                "androidx.camera:camera-lifecycle:$camerax_version",
+                // CameraX View class
+                "androidx.camera:camera-view:$camerax_version",
+
+                //WindowManager
+                "androidx.window:window:$window_manager_version",
+
+                // Glide
+                "com.github.bumptech.glide:glide:$glide_version",
+
+                //Location
+                "com.google.android.gms:play-services-location:$location_version"
 
         ]
         testLibraries = [
@@ -59,10 +90,15 @@ buildscript {
                 "androidx.room:room-paging:$room_version",
                 "androidx.room:room-runtime:$room_version",
                 "androidx.room:room-rxjava2:$room_version",
-                "androidx.room:room-rxjava3:$room_version"
+                "androidx.room:room-rxjava3:$room_version",
+
+                //work
+                "androidx.work:work-runtime-ktx:$work_version",
         ]
         librariesKapt = [
-                "androidx.room:room-compiler:$room_version"
+                "androidx.room:room-compiler:$room_version",
+                "com.github.bumptech.glide:compiler:$glide_version"
+
         ]
 
 

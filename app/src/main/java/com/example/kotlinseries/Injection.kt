@@ -8,7 +8,7 @@ import com.example.kotlinseries.database.KotlinSeriesDatabase
 
 object Injection {
     private fun provideKotlinSeriesRepository(context: Context): KotlinSeriesRepository {
-        return KotlinSeriesRepository()
+        return KotlinSeriesRepository(KotlinSeriesDatabase.getDatabase(context))
     }
 
     fun provideViewModelFactory(

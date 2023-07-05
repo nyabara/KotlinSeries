@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/aboutFragment">
+    app:startDestination="@id/filesFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -51,7 +51,13 @@
         android:id="@+id/filesFragment"
         android:name="com.example.kotlinseries.ui.FilesFragment"
         android:label="@string/myfile"
-        tools:layout="@layout/fragment_files" />
+        tools:layout="@layout/fragment_files" >
+
+
+        <action
+            android:id="@+id/action_filesFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newsFragment"
         android:name="com.example.kotlinseries.ui.NewsFragment"
@@ -67,4 +73,29 @@
         android:name="com.example.kotlinseries.ui.ShareFragment"
         android:label="@string/share"
         tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/cameraPermissionsFragment"
+        android:name="com.example.kotlinseries.ui.CameraPermissionsFragment"
+        android:label="CameraPermissionsFragment" >
+
+
+        <action
+            android:id="@+id/action_cameraPermissionsFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.example.kotlinseries.ui.CameraFragment"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" >
+        <action
+            android:id="@+id/action_cameraFragment_to_cameraPermissionsFragment"
+            app:destination="@id/cameraPermissionsFragment" />
+        <action
+            android:id="@+id/action_cameraFragment_to_filesFragment"
+            app:destination="@id/filesFragment" />
+    </fragment>
+
+
 </navigation>
