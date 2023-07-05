@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import com.example.kotlinseries.R
 class HomeFragment : Fragment() {
  
@@ -22,7 +24,19 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-
-
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val mywebView:WebView = view.findViewById(R.id.fWebView)
+        mywebView.webViewClient = object : WebViewClient (){
+            override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+                view.loadUrl(url)
+                return true
+            }
+        }
+        mywebView.settings.javaScriptEnabled = true
+        mywebView.loadUrl("https://www.kingdombankltd.co.ke/")
+        mywebView.settings.allowContentAccess = true
+        mywebView.settings.domStorageEnabled = true
+        mywebView.settings.useWideViewPort = true
+    }
 }

@@ -11,6 +11,8 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+        <item name="colorPrimary">@color/green_700</item>
+        <item name="colorPrimaryVariant">@color/green_500</item>
     </style>
     <style name="Theme.KotlinSeries.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
@@ -27,7 +29,7 @@
     </style>
 
     <style name="ThemeOverlay.App.BottomNavigationView" parent="">
-        <item name="colorPrimary">@color/kotlin_series_pink_100</item>
+        <item name="colorPrimary">@color/green_700</item>
         <item name="colorOnPrimary">@color/kotlin_series_pink_900</item>
     </style>
 </resources>

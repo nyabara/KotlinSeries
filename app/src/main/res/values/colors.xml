@@ -5,4 +5,7 @@
     <color name="purple_200">#FFBB86FC</color>
     <color name="kotlin_series_pink_100">#FFBB86FC</color>
     <color name="kotlin_series_pink_900">#FFFFFFFF</color>
+
+    <color name="green_700">#195717</color>
+    <color name="green_500">#49bb79</color>
 </resources>
